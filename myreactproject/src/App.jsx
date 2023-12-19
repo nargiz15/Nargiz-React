@@ -21,16 +21,20 @@ function App() {
   return (
     <>
      
-      <div className='form-div'>
+      <div>
       <h1>{heading}</h1>
+      
+      <form className='form-div'>
       <input type="text"  placeholder='What is your name?'/>
       <button style={{backgroundColor: ismouseover ? "black" : "white"}}
-      
+
        onClick={handleClick}
        onMouseOver={handleMouseOver}
        onMouseOut={handleMouseOut}
        >Submit</button>
 
+      </form>
+      
 
       </div>
     
