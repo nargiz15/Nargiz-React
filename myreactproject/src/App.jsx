@@ -3,12 +3,16 @@ import './App.css'
 
 function App() {
   
- const [heading,setHeading] = useState("Hello")
+//  const [heading,setHeading] = useState("Hello");
+ const [word,setWord]=useState("");
+ const [test,setTest]=useState("");
  const [ismouseover, setMouseOver] = useState(false)
 
  
- const handleClick=()=>{
-  setHeading("Submitted");
+ const handleClick=(e)=>{
+  e.preventDefault()
+  setTest(word);
+  setWord("")
  }
  
   const handleMouseOver=()=>{
@@ -22,10 +26,10 @@ function App() {
     <>
      
       <div>
-      <h1>{heading}</h1>
-      
+      <h1>Hello {test}</h1>
+
       <form className='form-div'>
-      <input type="text"  placeholder='What is your name?'/>
+      <input type="text" value={word}  placeholder='What is your name?' onChange={(e)=>{setWord(e.target.value)}}/>
       <button style={{backgroundColor: ismouseover ? "black" : "white"}}
 
        onClick={handleClick}
